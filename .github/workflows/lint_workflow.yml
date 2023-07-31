@@ -1,0 +1,37 @@
+name: Lint
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch
+
+jobs:
+  static_analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+    
+      - name: Run static analysis with semgrep
+        # run: semgrep C:/Users/Boricia/Music/4DVP-EXAM/src
+
+  dockerfile_analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+     
+      - name: Run Dockerfile analysis with hadolint
+        run: hadolint C:/Users/Boricia/Music/4DVP-EXAM/Dockerfile  
+
+  mega_calculator:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+     
+      - name: Run MegaCalculator 
+        run: python C:/Users/Boricia/Music/4DVP-EXAM/src/mega_calculator/__main__.py  
